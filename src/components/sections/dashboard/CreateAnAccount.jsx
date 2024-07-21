@@ -1,6 +1,7 @@
 import Card from "../../Card";
 
 import CreateAccountImage from "../../../assets/create_account.png";
+import { Link } from "react-router-dom";
 
 function CreateAnAccount({ hideButton }) {
   return (
@@ -39,9 +40,12 @@ function CreateAnAccount({ hideButton }) {
             </div>
 
             <div className="flex flex-row justify-between items-center gap-2 w-full mt-4">
-              <button className="bg-purple-400 w-full p-4 rounded-2xl">
+              <Link
+                to="/sign-up"
+                className="bg-red-600 w-full p-4 text-center rounded-2xl"
+              >
                 Get Started
-              </button>
+              </Link>
             </div>
           </>
         )}

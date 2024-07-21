@@ -12,6 +12,8 @@ import ChatCoverPage from './components/sections/chatUI/ChatCoverPage.jsx'
 
 import './index.css';
 import ChatRoom from './components/sections/chatUI/ChatRoom.jsx';
+import SignIn from './components/sections/signin/SignIn.jsx';
+import SignUp from './components/sections/createAnAccount/SignUp.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,9 +33,14 @@ const router = createBrowserRouter([
     path: '/chat-room',
     element: <ChatRoom />
   },
-  
-  
-  
+  {
+    path: '/sign-in',
+    element: <SignIn />
+  },
+  {
+    path: '/sign-up',
+    element: <SignUp />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

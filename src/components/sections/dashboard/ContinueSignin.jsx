@@ -1,6 +1,7 @@
 import Card from "../../Card";
 
 import ChatCoverImage from "../../../assets/chat.png";
+import { Link } from "react-router-dom";
 
 function ContinueSignin({ hideButton }) {
   return (
@@ -39,9 +40,12 @@ m-3"
             </div>
 
             <div className="flex flex-row justify-between items-center gap-2 w-full mt-4">
-              <button className="bg-red-500 w-full p-4 rounded-2xl">
+              <Link
+                to="/sign-in"
+                className="bg-red-600 w-full p-4 text-center rounded-2xl"
+              >
                 Get Started
-              </button>
+              </Link>
             </div>
           </>
         )}
