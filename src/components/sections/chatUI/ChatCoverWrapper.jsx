@@ -101,11 +101,11 @@ export default function ChatCoverWrapper() {
                       defaultValue={5}
                       className="bg-pink-200 placeholder:text-pink-600 text-pink-600 inline-block border border-transparent px-8 py-3 text-center font-medium text-indigo shadow-lg rounded-xl"
                     />
-                     Defaults to 5
+                    Defaults to 5
                   </div>
                   <div className="flex flex-row justify-start items-center gap-4 text-white">
-                    <input type="checkbox" checked />
-                    I Agree To React-Chat Terms and Conditions
+                    <input type="checkbox" checked />I Agree To React-Chat Terms
+                    and Conditions
                   </div>
                   <Link
                     to="/chat-room"
@@ -115,10 +115,10 @@ export default function ChatCoverWrapper() {
                   </Link>
                   <Link
                     to="/"
-                    className="inline-block rounded-md border border-transparent px-8 py-2 w-96 mt-12 text-center font-medium text-white"
+                    className="inline-block rounded-md border border-transparent px-8 py-2 w-96 mt-6 text-center font-medium text-white"
                   >
                     Navigate back to Dashboard
-                 </Link>
+                  </Link>
                 </div>
               </div>
             </div>

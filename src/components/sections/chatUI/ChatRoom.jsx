@@ -3,28 +3,29 @@ import ChatActivity from "./ChatActivity";
 
 export default function ChatRoom() {
   return (
-    <div className="flex flex-col h-screen justify-start gap-20 items-center w-full p-6  bg-gradient-to-l from-slate-900 via-slate-300 to-slate-700">
-      <div className="flex flex-row w-full">
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl w-full text-left">
+    <div className="flex flex-col justify-start gap-12 items-center w-full p-5  bg-gradient-to-l bg-white">
+      <div className="flex flex-row w-full pt-5 px-10 pb-0 mb-0">
+        <h1 className="text-5xl font-bold tracking-tight text-black w-full text-left">
           Chat Room
         </h1>
         <Link
-         to="/"
-          className="inline-flex items-center w-fit text-nowrap px-5 py-1 text-xs font-medium text-center text-white bg-slate-900 border rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+          to="/"
+          className="inline-flex items-center w-fit text-nowrap px-4 py-0 text-lg font-medium text-center text-black  border rounded-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-100"
         >
-         Navigate Back to Dashboard
+          Back to Dashboard
         </Link>
       </div>
-      <div className="flex flex-row justify-center items-center w-full bg-white p-10 h-screen rounded-2xl gap-20">
-        <div className="flex flex-col">
-          <h3 className="mb-4 text-xl font-semibold text-gray-900">
-            Manage Your Connects
-          </h3>
-          <div className="bg-slate-200 p-5 rounded-3xl shadow-xl">
-            <ChatActivity />
-          </div>
-        </div>
-        <div className="bg-slate-200 p-5 rounded-3xl shadow-xl">
+      <div className="px-10 w-full">
+        <p className="bg-blue-50 rounded-2xl px-3 w-full py-5">
+          <span className="font-semibold">Please Note:</span> Current Profile
+          allocated as{" "}
+          <span className="font-semibold text-blue-800">Anonymous User</span>.
+          To use a well defined profile consider registering yourself as a new
+          user for our react-chat app
+        </p>
+      </div>
+      <div className="grid grid-cols-2 grid-rows-1 w-full px-10 gap-10 mt-0 pt-0">
+        <div className="col-end-2 bg-blue-100 p-5 rounded-3xl shadow-xl">
           <div className="w-fit">
             <h3 className="mb-4 text-lg font-semibold text-gray-900">
               Comments
@@ -32,7 +33,7 @@ export default function ChatRoom() {
 
             <div className="space-y-4 p-10 bg-white m-2 rounded-3xl mb-6">
               <div className="flex">
-                <div className="flex-1 bg-slate-500 border rounded-3xl px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                <div className="flex-1 bg-blue-500 border rounded-3xl px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                   <strong className="text-white">Sender 1</strong>{" "}
                   <span className="text-xs text-gray-100">3:34 PM</span>
                   <p className="text-sm text-slate-200">
@@ -70,7 +71,7 @@ export default function ChatRoom() {
               </div>
 
               <div className="flex">
-                <div className="flex-1 bg-slate-500 border rounded-3xl px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                <div className="flex-1 bg-blue-500 border rounded-3xl px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                   <strong className="text-white">Sender 2</strong>{" "}
                   <span className="text-xs text-gray-100">3:34 PM</span>
                   <p className="text-sm text-slate-200">
@@ -89,13 +90,13 @@ export default function ChatRoom() {
               </div>
             </div>
             <form>
-              <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+              <div className="py-2 px-4 mx-1 mb-4 bg-white rounded-3xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                 <label htmlFor="comment" className="sr-only">
                   Your comment
                 </label>
                 <textarea
                   id="comment"
-                  rows="2"
+                  rows="5"
                   className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                   placeholder="Write a comment..."
                   required
@@ -108,6 +109,15 @@ export default function ChatRoom() {
                 Post comment
               </button>
             </form>
+          </div>
+        </div>
+
+        <div className="col-start-2 bg-blue-100 p-5 rounded-3xl shadow-xl">
+          <h3 className="mb-4 text-xl font-semibold text-gray-900">
+            Manage Your Connects
+          </h3>
+          <div className="p-5 overflow-scroll">
+            <ChatActivity />
           </div>
         </div>
       </div>
