@@ -4,13 +4,19 @@ import Chats from "./Chats";
 import ChatTextArea from "./ChatTextArea";
 import ChatRoomHeader from "./ChatRoomHeader";
 import ChatActivityArea from "./ChatActivityArea";
-import { dummyComments } from "../../../data/comments";
-import { connects } from '../../../data/connects';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { addANewComment } from '../../../redux/commentsSlice'
+
 
 export default function ChatRoom() {
-  const dbComments = JSON.parse(localStorage.getItem('COMMENTS_DB')) ?? [];
-  const [rcConnects, setRcConnects] = useState(connects);
-  const [comments, setComments] = useState(dbComments?.length ? dbComments : dummyComments);
+  // const dbComments = JSON.parse(localStorage.getItem('COMMENTS_DB')) ?? [];
+
+  const dispatch = useDispatch()
+ 
+  const connects = useSelector((state) => state.connects_redux_slice)
+  const comments = useSelector((state) => state.comments_redux_slice)
+  // const [comments, setComments] = useState(dbComments?.length ? dbComments : dummyComments);
   const [newComment, setNewComment] = useState('');
 
   function onHandleUserComment(event) {
@@ -32,11 +38,12 @@ export default function ChatRoom() {
       chat_author: "green",
     };
 
-    setComments((prevComments) => {
-      const allComments = [...prevComments, comment];
-      localStorage.setItem('COMMENTS_DB', JSON.stringify(allComments));
-      return allComments;
-    });
+    dispatch(addANewComment(comment))
+    // setComments((prevComments) => {
+    //   const allComments = [...prevComments, comment];
+    //   localStorage.setItem('COMMENTS_DB', JSON.stringify(allComments));
+    //   return allComments;
+    // });
 
     setNewComment('');
   }

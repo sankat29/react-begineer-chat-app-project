@@ -8,8 +8,8 @@ export default function ChatActivity(props) {
       role="list"
       className="divide-y bg-white p-4 rounded-3xl divide-gray-100"
     >
-      {people.map((person) => (
-        <li key={person.email} className="flex justify-between gap-x-6 py-5">
+      {people.map((person, index) => (
+        <li key={index} className="flex justify-between gap-x-6 py-5">
           <div className="flex min-w-0 gap-x-4">
             <img
               alt=""
